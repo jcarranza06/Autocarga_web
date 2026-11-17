@@ -1,6 +1,7 @@
 import { useLang } from '../i18n/LanguageContext.jsx'
 import WhatsAppButton from './WhatsAppButton.jsx'
 import Link from './Link.jsx'
+import ChargerGraphic from './ChargerGraphic.jsx'
 
 export default function Hero() {
   const { t } = useLang()
@@ -30,18 +31,7 @@ export default function Hero() {
         </div>
 
         <div className="hero__panel" aria-hidden="true">
-          <div className="charge-card">
-            <div className="charge-card__top">
-              <span>{h.card.session}</span>
-              <span className="pulse-dot" />
-            </div>
-            <div className="charge-card__value">82<small>%</small></div>
-            <div className="charge-card__bar"><span /></div>
-            <div className="charge-card__meta">
-              <div><small>{h.card.connector}</small><strong>{t.connectors.type} 2</strong></div>
-              <div><small>{h.card.location}</small><strong>{h.card.indoor}</strong></div>
-            </div>
-          </div>
+          <ChargerGraphic />
           <div className="stat-chip stat-chip--a"><strong>15</strong> {h.chipYears}</div>
           <div className="stat-chip stat-chip--b">{h.chipCertified}</div>
         </div>

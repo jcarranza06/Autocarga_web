@@ -154,37 +154,88 @@ img { display: block; max-width: 100%; }
 }
 .hero__inner { position: relative; display: grid; grid-template-columns: 1.25fr 1fr; gap: 60px; align-items: center; }
 .hero h1, .about-hero h1 { color: #fff; font-size: clamp(2.3rem, 5.2vw, 4.1rem); margin: 20px 0 24px; }
-.hero__subtitle { font-size: clamp(1.1rem, 1.6vw, 1.3rem); color: #fff; font-weight: 500; }
+.hero__subtitle {
+  font-size: clamp(1.2rem, 1.9vw, 1.45rem); line-height: 1.4; color: #fff; font-weight: 600;
+  padding-left: 16px; border-left: 3px solid var(--accent); max-width: 560px;
+}
 .hero__text { color: var(--muted-light); margin-top: 10px; max-width: 540px; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
 
-.hero__panel { position: relative; min-height: 380px; display: grid; place-items: center; }
-.charge-card {
-  width: min(340px, 100%); padding: 28px; border-radius: 28px;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
-  border: 1px solid rgba(255, 255, 255, 0.14); backdrop-filter: blur(10px);
-  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.6);
-  animation: float 6s ease-in-out infinite;
+.hero__panel { position: relative; min-height: 380px; display: grid; place-items: center; padding: 60px 0 10px; }
+/* Decorative wall charger */
+.charger { width: min(330px, 100%); display: flex; flex-direction: column; align-items: center; animation: float 6s ease-in-out infinite; }
+.charger__body {
+  position: relative; width: 100%; padding: 18px 18px 26px; border-radius: 34px 34px 40px 40px;
+  background: linear-gradient(165deg, #26324d, #121a2c 60%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 40px 80px -30px rgba(0, 0, 0, 0.7);
 }
-.charge-card__top { display: flex; justify-content: space-between; align-items: center; color: var(--muted-light); font-size: 0.85rem; }
-.pulse-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 rgba(198, 244, 50, 0.7); animation: pulse 2s infinite; }
-.charge-card__value { font-family: var(--font-display); font-size: 4.5rem; font-weight: 700; margin: 12px 0 8px; }
-.charge-card__value small { font-size: 1.6rem; color: var(--muted-light); margin-left: 4px; }
-.charge-card__bar { height: 10px; border-radius: 10px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
-.charge-card__bar span {
-  display: block; height: 100%; width: 82%; border-radius: inherit;
+.charger__top { display: flex; justify-content: space-between; align-items: center; padding: 2px 6px 14px; }
+.charger__brand {
+  display: inline-flex; align-items: center; gap: 6px; color: var(--accent);
+  font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+}
+.charger__led {
+  width: 44px; height: 6px; border-radius: 6px; background: var(--accent-2);
+  box-shadow: 0 0 14px var(--accent-2); animation: led 1.6s ease-in-out infinite;
+}
+.charger.is-done .charger__led { background: var(--accent); box-shadow: 0 0 16px var(--accent); animation: none; }
+.charger__screen {
+  border-radius: 20px; padding: 18px 18px 16px;
+  background: #070c16; border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 30px rgba(45, 226, 198, 0.08);
+}
+.charger__status { color: var(--accent-2); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em; }
+.charger.is-done .charger__status { color: var(--accent); }
+.charger__pct { font-family: var(--font-display); font-size: 4rem; font-weight: 700; line-height: 1; margin: 8px 0 14px; color: #fff; }
+.charger__pct small { font-size: 1.5rem; color: var(--muted-light); margin-left: 4px; }
+
+.battery {
+  position: relative; height: 26px; margin-right: 8px; border-radius: 7px;
+  border: 2px solid rgba(255, 255, 255, 0.35); padding: 3px;
+}
+.battery::after {
+  content: ''; position: absolute; right: -8px; top: 50%; width: 5px; height: 10px;
+  transform: translateY(-50%); border-radius: 0 3px 3px 0; background: rgba(255, 255, 255, 0.35);
+}
+.battery__fill {
+  height: 100%; border-radius: 4px;
   background: linear-gradient(90deg, var(--accent-2), var(--accent));
-  animation: charge 3s ease-out both;
+  box-shadow: 0 0 16px rgba(198, 244, 50, 0.45);
 }
-.charge-card__meta { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
-.charge-card__meta div { background: rgba(255, 255, 255, 0.06); border-radius: 14px; padding: 12px 14px; }
-.charge-card__meta small { display: block; color: var(--muted-light); font-size: 0.75rem; }
+.battery__cells { position: absolute; inset: 3px; display: grid; grid-template-columns: repeat(5, 1fr); }
+.battery__cells span + span { border-left: 2px solid #070c16; }
+
+.charger__stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 16px; }
+.charger__stats div { padding: 0 8px; }
+.charger__stats div:first-child { padding-left: 0; }
+.charger__stats div + div { border-left: 1px solid rgba(255, 255, 255, 0.1); }
+.charger__stats small { display: block; color: var(--muted-light); font-size: 0.7rem; }
+.charger__stats strong { display: block; font-size: 0.88rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+.charger__socket {
+  position: absolute; left: 50%; bottom: -20px; transform: translateX(-50%);
+  width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
+  background: #0b1220; border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.charger__socket circle { fill: var(--accent); }
+.charger__socket .socket-ring { fill: #1d2a47; }
+.charger__cable { width: 100%; height: 110px; margin-top: 10px; overflow: visible; }
+.charger__cable .cable-collar { fill: #2a3756; }
+.charger__cable .cable { fill: none; stroke: #2a3756; stroke-width: 12; stroke-linecap: round; }
+.charger__cable .cable-energy {
+  fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round;
+  stroke-dasharray: 6 16; animation: energy 0.9s linear infinite;
+}
+.charger.is-done .cable-energy { animation: none; opacity: 0; transition: opacity 0.6s; }
+@keyframes energy { to { stroke-dashoffset: -22; } }
+@keyframes led { 50% { opacity: 0.35; } }
 .stat-chip {
   position: absolute; padding: 10px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 500;
   background: var(--white); color: var(--ink); box-shadow: var(--shadow);
 }
 .stat-chip strong { font-family: var(--font-display); }
-.stat-chip--a { top: 22px; left: 0; animation: float 7s ease-in-out infinite reverse; }
+.stat-chip--a { top: 0; left: 0; animation: float 7s ease-in-out infinite reverse; }
 .stat-chip--b { bottom: 26px; right: 0; background: var(--accent); }
 
 @keyframes float { 50% { transform: translateY(-12px); } }

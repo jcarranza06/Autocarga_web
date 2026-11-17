@@ -33,8 +33,7 @@ export const IMAGES = {
   complexes: { src: '/images/image4_autocarga.webp', width: 543, height: 362 },
 }
 
-// WhatsApp link for Adri, e.g. 'https://wa.me/573001234567'
+// WhatsApp link, e.g. 'https://wa.me/573001234567'
 export const WHATSAPP_URL = 'https://wa.me/573204400593'
-export const WHATSAPP_NAME = 'Adri'
 
 export const BRAND = 'Autocarga'

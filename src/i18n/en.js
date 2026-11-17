@@ -1,0 +1,111 @@
+// English dictionary. Keep the same keys as es.js.
+export default {
+  // SEO: title ≈ 50-60 characters, description ≈ 140-160 characters
+  meta: {
+    home: {
+      title: 'EV Charger Installation for Businesses in Colombia | Autocarga',
+      description: 'We install electric vehicle charging stations for parking lots, buildings, residential complexes and businesses in Colombia. Request a consultation.',
+    },
+    about: {
+      title: 'About Us: 15 Years of Electrical Engineering | Autocarga',
+      description: 'Learn about Autocarga’s mission and vision: 15 years delivering safe, efficient and sustainable electrical projects in Colombia.',
+    },
+  },
+  rootChoose: 'Choose your language',
+  nav: {
+    solutions: 'Solutions',
+    benefits: 'Benefits',
+    connectors: 'Connectors',
+    contact: 'Contact',
+    about: 'About Us',
+    toggleMenu: 'Toggle menu',
+    home: 'home',
+    language: 'Language',
+  },
+  hero: {
+    eyebrow: 'EV charging infrastructure',
+    titleStart: 'Electric vehicle charging infrastructure for ',
+    titleHighlight: 'businesses and smart spaces.',
+    subtitle: 'Charge your vehicle with ease—at home or at your workplace.',
+    text: 'We implement electric vehicle charging solutions for parking lots, buildings, residential complexes, and commercial spaces.',
+    cta: 'Request consulting',
+    card: {
+      session: 'Charging session',
+      connector: 'Connector',
+      location: 'Location',
+      indoor: 'Indoor',
+    },
+    chipYears: 'years of experience',
+    chipCertified: 'Certified installations',
+  },
+  solutions: {
+    eyebrow: 'Our solutions',
+    title: 'Charging solutions for every space',
+    imageLabel: 'Image',
+    items: [
+      { title: 'Residential garages', text: 'Compact wall-mounted chargers; clean, discreet installation.', alt: 'Wall-mounted charger charging an electric vehicle' },
+      { title: 'Open parking areas', text: 'Chargers on small pedestals or mounted on columns.', alt: 'Modern, brutalist-style wall with electric vehicles charging' },
+      { title: 'Corporate parking', text: 'Solutions for employees, visitors, and company vehicles.', alt: 'Well-lit underground parking garage with electric vehicles charging' },
+      { title: 'Residential complexes', text: 'Shared charging solutions for apartment buildings and multi-unit residential properties.', alt: 'Underground parking garage with electric vehicles charging' },
+    ],
+  },
+  contact: {
+    homeEyebrow: 'Consulting',
+    homeTitle: 'We provide full consulting for your project.',
+    aboutEyebrow: 'Talk to an expert',
+    aboutTitle: 'Get expert guidance for your project.',
+    intro: 'Leave your details and our team will contact you to plan your charging project.',
+    direct: 'Or contact us directly:',
+    formTitle: 'Contact form',
+    fields: { name: 'Name', city: 'City', phone: 'Phone number', email: 'Email' },
+    errors: {
+      name: 'Please enter your name',
+      city: 'Please enter your city',
+      phone: 'Enter a valid phone number',
+      email: 'Enter a valid email',
+    },
+    submit: 'Contact me',
+    successTitle: 'Thank you!',
+    successText: 'We received your details and will contact you soon.',
+    again: 'Send another request',
+  },
+  benefits: {
+    eyebrow: 'Why {brand}',
+    title: 'Benefits of installing {brand} charging stations',
+    items: [
+      { title: 'Convenience and availability', text: 'No need to travel; charge whenever it suits your schedule.' },
+      { title: 'Cost-effectiveness', text: 'Highly competitive vehicle charging rates.' },
+      { title: 'Safety and reliability', text: 'Certified chargers and installations for both indoor and outdoor use.' },
+    ],
+  },
+  connectors: {
+    eyebrow: 'Compatibility',
+    title: 'Connector types',
+    type: 'Type',
+  },
+  about: {
+    eyebrow: 'About us',
+    titleStart: 'Engineering the ',
+    titleHighlight: 'energy transition',
+    titleEnd: ' in Colombia.',
+    statLine1: 'years of experience',
+    statLine2: 'in the Colombian market',
+    mission: 'Mission',
+    missionText:
+      'To provide comprehensive engineering and electrical service solutions, developing projects that meet high standards of quality, safety, efficiency, and reliability. With 15 years of experience in the Colombian market, we place our technical expertise, knowledge of current regulations, and execution capabilities at the service of companies, institutions, and organizations, offering solutions tailored to the specific needs of each project and contributing to the development of a modern, safe, and sustainable electrical infrastructure.',
+    vision: 'Vision',
+    visionText:
+      'To establish ourselves as a leading company in the Colombian electrical sector, recognized for our experience, technical excellence, regulatory compliance, and innovation in the development of electrical projects and solutions. We aim to strengthen our market presence, integrate new technologies, and play an active role in the country’s energy transition, contributing to the development of efficient, sustainable infrastructure prepared for future challenges.',
+    offerEyebrow: 'What we offer',
+    offerTitle: 'Solutions tailored to each project',
+    offering: [
+      { title: 'Open parking areas', text: 'Chargers on small pedestals or wall-mounted on columns.' },
+      { title: 'Corporate parking', text: 'Solutions for employees, visitors, and company vehicles.' },
+      { title: 'Residential complexes', text: 'Shared charging solutions for apartment buildings and multi-unit properties.' },
+    ],
+  },
+  footer: {
+    tagline: 'Electric vehicle charging infrastructure for businesses and smart spaces.',
+    rights: 'All rights reserved.',
+  },
+}

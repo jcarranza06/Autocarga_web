@@ -1,0 +1,111 @@
+// Diccionario en español. Mantén las mismas claves que en en.js.
+export default {
+  // SEO: título ≈ 50-60 caracteres, descripción ≈ 140-160 caracteres
+  meta: {
+    home: {
+      title: 'Instalación de cargadores para carros eléctricos | Autocarga',
+      description: 'Instalamos estaciones de carga para vehículos eléctricos en parqueaderos, edificios, conjuntos residenciales y empresas en Colombia. Solicita asesoría.',
+    },
+    about: {
+      title: 'Nosotros: 15 años en ingeniería eléctrica | Autocarga',
+      description: 'Conoce la misión y visión de Autocarga: 15 años desarrollando proyectos eléctricos seguros, eficientes y sostenibles en Colombia.',
+    },
+  },
+  rootChoose: 'Elige tu idioma',
+  nav: {
+    solutions: 'Soluciones',
+    benefits: 'Beneficios',
+    connectors: 'Conectores',
+    contact: 'Contacto',
+    about: 'Nosotros',
+    toggleMenu: 'Abrir o cerrar menú',
+    home: 'inicio',
+    language: 'Idioma',
+  },
+  hero: {
+    eyebrow: 'Infraestructura de carga eléctrica',
+    titleStart: 'Infraestructura de carga para vehículos eléctricos para ',
+    titleHighlight: 'empresas y espacios inteligentes.',
+    subtitle: 'Carga tu vehículo con facilidad, en casa o en tu lugar de trabajo.',
+    text: 'Implementamos soluciones de carga para vehículos eléctricos en parqueaderos, edificios, conjuntos residenciales y espacios comerciales.',
+    cta: 'Solicitar asesoría',
+    card: {
+      session: 'Sesión de carga',
+      connector: 'Conector',
+      location: 'Ubicación',
+      indoor: 'Interior',
+    },
+    chipYears: 'años de experiencia',
+    chipCertified: 'Instalaciones certificadas',
+  },
+  solutions: {
+    eyebrow: 'Nuestras soluciones',
+    title: 'Soluciones de carga para cada espacio',
+    imageLabel: 'Imagen',
+    items: [
+      { title: 'Garajes residenciales', text: 'Cargadores compactos de pared; instalación limpia y discreta.', alt: 'Cargador de pared cargando un vehículo eléctrico' },
+      { title: 'Parqueaderos abiertos', text: 'Cargadores en pequeños pedestales o montados en columnas.', alt: 'Muro moderno de estilo brutalista con vehículos eléctricos cargando' },
+      { title: 'Parqueaderos corporativos', text: 'Soluciones para empleados, visitantes y vehículos de la empresa.', alt: 'Parqueadero subterráneo bien iluminado con vehículos eléctricos cargando' },
+      { title: 'Conjuntos residenciales', text: 'Soluciones de carga compartida para edificios de apartamentos y propiedades residenciales multifamiliares.', alt: 'Parqueadero subterráneo con vehículos eléctricos cargando' },
+    ],
+  },
+  contact: {
+    homeEyebrow: 'Asesoría',
+    homeTitle: 'Te brindamos asesoría completa para tu proyecto.',
+    aboutEyebrow: 'Habla con un experto',
+    aboutTitle: 'Recibe asesoría experta para tu proyecto.',
+    intro: 'Déjanos tus datos y nuestro equipo te contactará para planear tu proyecto de carga.',
+    direct: 'O escríbenos directamente:',
+    formTitle: 'Formulario de contacto',
+    fields: { name: 'Nombre', city: 'Ciudad', phone: 'Teléfono', email: 'Correo electrónico' },
+    errors: {
+      name: 'Escribe tu nombre',
+      city: 'Escribe tu ciudad',
+      phone: 'Escribe un teléfono válido',
+      email: 'Escribe un correo válido',
+    },
+    submit: 'Quiero que me contacten',
+    successTitle: '¡Gracias!',
+    successText: 'Recibimos tus datos y te contactaremos pronto.',
+    again: 'Enviar otra solicitud',
+  },
+  benefits: {
+    eyebrow: 'Por qué {brand}',
+    title: 'Beneficios de instalar estaciones de carga {brand}',
+    items: [
+      { title: 'Comodidad y disponibilidad', text: 'Sin desplazamientos; carga cuando mejor se ajuste a tu horario.' },
+      { title: 'Rentabilidad', text: 'Tarifas de carga vehicular altamente competitivas.' },
+      { title: 'Seguridad y confiabilidad', text: 'Cargadores e instalaciones certificadas para uso interior y exterior.' },
+    ],
+  },
+  connectors: {
+    eyebrow: 'Compatibilidad',
+    title: 'Tipos de conectores',
+    type: 'Tipo',
+  },
+  about: {
+    eyebrow: 'Nosotros',
+    titleStart: 'Ingeniería para la ',
+    titleHighlight: 'transición energética',
+    titleEnd: ' en Colombia.',
+    statLine1: 'años de experiencia',
+    statLine2: 'en el mercado colombiano',
+    mission: 'Misión',
+    missionText:
+      'Brindar soluciones integrales de ingeniería y servicios eléctricos, desarrollando proyectos que cumplan altos estándares de calidad, seguridad, eficiencia y confiabilidad. Con 15 años de experiencia en el mercado colombiano, ponemos nuestra experticia técnica, conocimiento de la normativa vigente y capacidad de ejecución al servicio de empresas, instituciones y organizaciones, ofreciendo soluciones ajustadas a las necesidades específicas de cada proyecto y contribuyendo al desarrollo de una infraestructura eléctrica moderna, segura y sostenible.',
+    vision: 'Visión',
+    visionText:
+      'Consolidarnos como una empresa líder en el sector eléctrico colombiano, reconocida por nuestra experiencia, excelencia técnica, cumplimiento normativo e innovación en el desarrollo de proyectos y soluciones eléctricas. Buscamos fortalecer nuestra presencia en el mercado, integrar nuevas tecnologías y participar activamente en la transición energética del país, contribuyendo al desarrollo de una infraestructura eficiente, sostenible y preparada para los retos del futuro.',
+    offerEyebrow: 'Lo que ofrecemos',
+    offerTitle: 'Soluciones a la medida de cada proyecto',
+    offering: [
+      { title: 'Parqueaderos abiertos', text: 'Cargadores en pequeños pedestales o montados en pared sobre columnas.' },
+      { title: 'Parqueaderos corporativos', text: 'Soluciones para empleados, visitantes y vehículos de la empresa.' },
+      { title: 'Conjuntos residenciales', text: 'Soluciones de carga compartida para edificios de apartamentos y propiedades multifamiliares.' },
+    ],
+  },
+  footer: {
+    tagline: 'Infraestructura de carga para vehículos eléctricos para empresas y espacios inteligentes.',
+    rights: 'Todos los derechos reservados.',
+  },
+}

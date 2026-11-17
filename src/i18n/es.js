@@ -65,6 +65,8 @@ export default {
       email: 'Escribe un correo válido',
     },
     submit: 'Quiero que me contacten',
+    sending: 'Enviando…',
+    sendError: 'No pudimos enviar tu solicitud. Inténtalo de nuevo o escríbenos por WhatsApp.',
     successTitle: '¡Gracias!',
     successText: 'Recibimos tus datos y te contactaremos pronto.',
     again: 'Enviar otra solicitud',

@@ -65,6 +65,8 @@ export default {
       email: 'Enter a valid email',
     },
     submit: 'Contact me',
+    sending: 'Sending…',
+    sendError: 'We couldn’t send your request. Please try again or message us on WhatsApp.',
     successTitle: 'Thank you!',
     successText: 'We received your details and will contact you soon.',
     again: 'Send another request',

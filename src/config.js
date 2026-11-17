@@ -7,7 +7,7 @@
 
 // ⚠️ SEO: your real domain, without a trailing slash.
 //    Used for canonical URLs, hreflang, sitemap.xml and social previews.
-export const SITE_URL = 'https://www.tu-dominio.com'
+export const SITE_URL = 'https://www.auto-carga.com'
 
 // Cities where you work (used by Google for local searches).
 // Example: ['Bogotá', 'Medellín', 'Cali']. Empty = "Colombia".
@@ -18,7 +18,7 @@ export const SOCIAL_LINKS = []
 
 // Picture shown when the link is shared on WhatsApp, LinkedIn, Facebook…
 // Ideal size: 1200 × 630 px.
-export const OG_IMAGE = '/images/image3_autocarga.png'
+export const OG_IMAGE = '/images/image3_autocarga.webp'
 
 // When you convert to WebP, change the file names here (e.g. image1_autocarga.webp)
 // and update width/height if the size changes.

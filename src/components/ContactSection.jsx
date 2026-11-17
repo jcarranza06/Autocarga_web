@@ -2,13 +2,13 @@ import { useState } from 'react'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import WhatsAppButton from './WhatsAppButton.jsx'
 
-const empty = { name: '', city: '', phone: '', email: '' }
+const empty = { name: '', city: '', phone: '', email: '', website: '' }
 
 const fields = [
-  { name: 'name', type: 'text', autoComplete: 'name' },
-  { name: 'city', type: 'text', autoComplete: 'address-level2' },
-  { name: 'phone', type: 'tel', autoComplete: 'tel' },
-  { name: 'email', type: 'email', autoComplete: 'email' },
+  { name: 'name', type: 'text', autoComplete: 'name', maxLength: 100 },
+  { name: 'city', type: 'text', autoComplete: 'address-level2', maxLength: 100 },
+  { name: 'phone', type: 'tel', autoComplete: 'tel', maxLength: 30 },
+  { name: 'email', type: 'email', autoComplete: 'email', maxLength: 200 },
 ]
 
 // Returns the keys of invalid fields (messages come from the dictionary)
@@ -17,29 +17,43 @@ function validate(form) {
   if (!form.name.trim()) invalid.push('name')
   if (!form.city.trim()) invalid.push('city')
   if (!/^[+\d][\d\s-]{6,}$/.test(form.phone.trim())) invalid.push('phone')
-  if (!/^\S+@\S+\.\S+$/.test(form.email)) invalid.push('email')
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) invalid.push('email')
   return invalid
 }
 
 export default function ContactSection({ id, eyebrow, title }) {
-  const { t } = useLang()
+  const { t, lang, page } = useLang()
   const c = t.contact
   const [form, setForm] = useState(empty)
   const [invalid, setInvalid] = useState([])
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState('idle') // idle | sending | sent | error
 
   const update = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault()
+    if (status === 'sending') return
     const result = validate(form)
     setInvalid(result)
-    if (result.length === 0) {
-      // TODO: send `form` to your backend or email service here
-      setSent(true)
+    if (result.length) return
+
+    setStatus('sending')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, lang, page: window.location.pathname || page }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok || !data.ok) throw new Error(data.error || res.status)
+      setStatus('sent')
       setForm(empty)
+    } catch {
+      setStatus('error')
     }
   }
+
+  const sending = status === 'sending'
 
   return (
     <section id={id} className="section contact">
@@ -55,12 +69,12 @@ export default function ContactSection({ id, eyebrow, title }) {
         </div>
 
         <div className="contact__card">
-          {sent ? (
-            <div className="contact__success">
+          {status === 'sent' ? (
+            <div className="contact__success" role="status">
               <div className="contact__check">✓</div>
               <h3>{c.successTitle}</h3>
               <p>{c.successText}</p>
-              <button className="btn btn--outline-dark" onClick={() => setSent(false)}>
+              <button className="btn btn--outline-dark" onClick={() => setStatus('idle')}>
                 {c.again}
               </button>
             </div>
@@ -79,6 +93,8 @@ export default function ContactSection({ id, eyebrow, title }) {
                         value={form[f.name]}
                         onChange={update}
                         autoComplete={f.autoComplete}
+                        maxLength={f.maxLength}
+                        disabled={sending}
                         aria-invalid={hasError}
                       />
                       {hasError && <small>{c.errors[f.name]}</small>}
@@ -86,8 +102,21 @@ export default function ContactSection({ id, eyebrow, title }) {
                   )
                 })}
               </div>
-              <button type="submit" className="btn btn--primary btn--block">
-                {c.submit}
+
+              {/* Anti-spam trap: hidden from people, bots fill it in */}
+              <div className="hp" aria-hidden="true">
+                <label>
+                  Website
+                  <input name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={update} />
+                </label>
+              </div>
+
+              {status === 'error' && (
+                <p className="form-error" role="alert">{c.sendError}</p>
+              )}
+
+              <button type="submit" className="btn btn--primary btn--block" disabled={sending} aria-busy={sending}>
+                {sending ? <><span className="spinner" aria-hidden="true" />{c.sending}</> : c.submit}
               </button>
             </form>
           )}

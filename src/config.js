@@ -17,8 +17,14 @@ export const CITIES = ['Bogotá']
 export const SOCIAL_LINKS = []
 
 // Picture shown when the link is shared on WhatsApp, LinkedIn, Facebook…
-// Ideal size: 1200 × 630 px.
+// 1. Create a 1200 × 630 px JPG (JPG works everywhere; WebP fails on some apps).
+// 2. Save it as public/images/og-autocarga.jpg
+// 3. Change the line below to '/images/og-autocarga.jpg' and set width/height.
 export const OG_IMAGE = '/images/image3_autocarga.webp'
+export const OG_IMAGE_SIZE = { width: 541, height: 541 }
+
+// Public contact email (shown to Google in the structured data). Optional.
+export const CONTACT_EMAIL = ''
 
 // When you convert to WebP, change the file names here (e.g. image1_autocarga.webp)
 // and update width/height if the size changes.

@@ -24,7 +24,8 @@ export function rootPage() {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${BRAND}</title>
+    <title>${DICTIONARIES.es.meta.home.title}</title>
+    <meta name="description" content="${DICTIONARIES.es.meta.home.description}" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href="${SITE_URL}/" />
     ${links}

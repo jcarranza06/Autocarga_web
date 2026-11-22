@@ -3,12 +3,12 @@ export default {
   // SEO: title ≈ 50-60 characters, description ≈ 140-160 characters
   meta: {
     home: {
-      title: 'EV Charger Installation for Businesses in Colombia | Autocarga',
-      description: 'We install electric vehicle charging stations for parking lots, buildings, residential complexes and businesses in Colombia. Request a consultation.',
+      title: 'EV Charger Installation in Bogotá, Colombia | Autocarga',
+      description: 'We install electric vehicle chargers in Bogotá for homes, residential complexes, businesses and parking lots. RETIE-certified engineers. Quotes 24/7.',
     },
     about: {
-      title: 'About Us: 15 Years of Electrical Engineering | Autocarga',
-      description: 'Learn about Autocarga’s mission and vision: 15 years delivering safe, efficient and sustainable electrical projects in Colombia.',
+      title: 'About Us: Electrical Engineering in Bogotá | Autocarga',
+      description: 'Autocarga: 15 years of electrical engineering. We install EV chargers and charging stations across Bogotá with RETIE certification.',
     },
   },
   rootChoose: 'Choose your language',
@@ -16,6 +16,7 @@ export default {
     solutions: 'Solutions',
     benefits: 'Benefits',
     connectors: 'Connectors',
+    faq: 'FAQ',
     contact: 'Contact',
     about: 'About Us',
     toggleMenu: 'Toggle menu',
@@ -23,11 +24,12 @@ export default {
     language: 'Language',
   },
   hero: {
-    eyebrow: 'EV charging infrastructure',
-    titleStart: 'Charging infrastructure for ',
+    eyebrow: 'EV chargers in Bogotá',
+    titleStart: 'Charger installation for ',
     titleHighlight: 'electric vehicles',
-    subtitle: 'Charge your vehicle with ease—at home or at your workplace.',
-    text: 'We implement electric vehicle charging solutions for parking lots, buildings, residential complexes, and commercial spaces.',
+    titleEnd: ' in Bogotá',
+    subtitle: 'Charge your electric vehicle with ease—at home or at your workplace.',
+    text: 'We install 7 kW, 11 kW and higher-power EV chargers in homes, buildings, residential complexes, businesses and parking lots across every district of Bogotá, with RETIE certification.',
     cta: 'Request consulting',
     card: {
       charging: 'Charging…',
@@ -42,13 +44,13 @@ export default {
   },
   solutions: {
     eyebrow: 'Our solutions',
-    title: 'Charging solutions for every space',
+    title: 'EV chargers for every space',
     imageLabel: 'Image',
     items: [
-      { title: 'Residential garages', text: 'Compact wall-mounted chargers; clean, discreet installation.', alt: 'Wall-mounted charger charging an electric vehicle' },
-      { title: 'Open parking areas', text: 'Chargers on small pedestals or mounted on columns.', alt: 'Modern, brutalist-style wall with electric vehicles charging' },
-      { title: 'Corporate parking', text: 'Solutions for employees, visitors, and company vehicles.', alt: 'Well-lit underground parking garage with electric vehicles charging' },
-      { title: 'Residential complexes', text: 'Shared charging solutions for apartment buildings and multi-unit residential properties.', alt: 'Underground parking garage with electric vehicles charging' },
+      { title: 'Residential garages', text: '7 kW and 11 kW wall-mounted chargers for your home; clean, discreet installation.', alt: 'Wall-mounted EV charger charging an electric vehicle in a home garage in Bogotá' },
+      { title: 'Open parking areas', text: 'Chargers on small pedestals or mounted on columns.', alt: 'EV charging station in an open parking area with electric vehicles charging' },
+      { title: 'Corporate parking', text: 'Charging stations for employees, visitors, and company vehicles.', alt: 'Underground corporate parking garage with electric vehicle chargers' },
+      { title: 'Residential complexes', text: 'Shared or individual EV chargers for apartment buildings and residential complexes.', alt: 'EV chargers in the underground parking garage of a residential complex' },
     ],
   },
   contact: {
@@ -75,11 +77,41 @@ export default {
   },
   benefits: {
     eyebrow: 'Why {brand}',
-    title: 'Benefits of installing {brand} charging stations',
+    title: 'Benefits of installing your EV charger with {brand}',
     items: [
-      { title: 'Convenience and availability', text: 'No need to travel; charge whenever it suits your schedule.' },
-      { title: 'Cost-effectiveness', text: 'Highly competitive vehicle charging rates.' },
-      { title: 'Safety and reliability', text: 'Certified chargers and installations for both indoor and outdoor use.' },
+      { title: 'Convenience and availability', text: 'No trips to a charging station: charge your EV at home or at the office, whenever it suits your schedule.' },
+      { title: 'Savings', text: 'Charging at home costs far less than filling up with gasoline. We help you choose the right charger without overpaying.' },
+      { title: 'Safety and reliability', text: 'Electrical engineers and RETIE certification. Chargers and installations suitable for indoor and outdoor use.' },
+    ],
+  },
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Questions about EV chargers in Bogotá',
+    items: [
+      {
+        q: 'Which EV charger do I need at home?',
+        a: 'For most homes we recommend a 7 kW (single-phase) or 11 kW (three-phase) wall charger. Before installing, we check your electrical supply and your vehicle to choose the right power. We also install higher-power chargers, including DC fast chargers for businesses.',
+      },
+      {
+        q: 'Does the installation include RETIE certification?',
+        a: 'Yes. Our electrical engineers design and install the charging point in compliance with RETIE and carry out the certification required by Colombian regulations.',
+      },
+      {
+        q: 'Which areas of Bogotá do you cover?',
+        a: 'We cover every district (localidad) of Bogotá: Usaquén, Chapinero, Santa Fe, San Cristóbal, Usme, Tunjuelito, Bosa, Kennedy, Fontibón, Engativá, Suba, Barrios Unidos, Teusaquillo, Los Mártires, Antonio Nariño, Puente Aranda, La Candelaria, Rafael Uribe Uribe, Ciudad Bolívar and Sumapaz.',
+      },
+      {
+        q: 'Can I install a charger in my residential complex’s parking lot?',
+        a: 'Yes. We help you with the technical study and the proposal for the building management, whether it’s an individual charger connected to your meter or a shared solution for the whole complex.',
+      },
+      {
+        q: 'Can you build a charging station for my business or parking lot?',
+        a: 'Yes. We design and install charging stations for fleets, employees, visitors and commercial parking lots, with AC or DC chargers depending on use, compatible with Type 1, Type 2 and GBT connectors.',
+      },
+      {
+        q: 'How do I request a quote?',
+        a: 'Message us on WhatsApp or by email: we reply 24/7. You can also leave your details in the form and an engineer will contact you to review your project.',
+      },
     ],
   },
   connectors: {
@@ -109,7 +141,7 @@ export default {
     ],
   },
   footer: {
-    tagline: 'Electric vehicle charging infrastructure for businesses and smart spaces.',
+    tagline: 'Electric vehicle charger and charging station installation in Bogotá. 24/7 support via WhatsApp and email.',
     rights: 'All rights reserved.',
   },
 }

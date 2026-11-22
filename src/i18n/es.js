@@ -3,12 +3,12 @@ export default {
   // SEO: título ≈ 50-60 caracteres, descripción ≈ 140-160 caracteres
   meta: {
     home: {
-      title: 'Instalación de cargadores para carros eléctricos | Autocarga',
-      description: 'Instalamos estaciones de carga para vehículos eléctricos en parqueaderos, edificios, conjuntos residenciales y empresas en Colombia. Solicita asesoría.',
+      title: 'Instalación de cargadores eléctricos en Bogotá | Autocarga',
+      description: 'Instalamos cargadores para vehículos eléctricos en Bogotá: casas, conjuntos, empresas y electrolineras. Ingenieros con certificación RETIE. Cotiza 24/7.',
     },
     about: {
-      title: 'Nosotros: 15 años en ingeniería eléctrica | Autocarga',
-      description: 'Conoce la misión y visión de Autocarga: 15 años desarrollando proyectos eléctricos seguros, eficientes y sostenibles en Colombia.',
+      title: 'Nosotros: ingeniería eléctrica en Bogotá, 15 años | Autocarga',
+      description: 'Autocarga: 15 años en ingeniería eléctrica. Instalamos cargadores para vehículos eléctricos y electrolineras en Bogotá con certificación RETIE.',
     },
   },
   rootChoose: 'Elige tu idioma',
@@ -16,6 +16,7 @@ export default {
     solutions: 'Soluciones',
     benefits: 'Beneficios',
     connectors: 'Conectores',
+    faq: 'Preguntas',
     contact: 'Contacto',
     about: 'Nosotros',
     toggleMenu: 'Abrir o cerrar menú',
@@ -23,11 +24,12 @@ export default {
     language: 'Idioma',
   },
   hero: {
-    eyebrow: 'Infraestructura de carga eléctrica',
-    titleStart: 'Infraestructura de carga para ',
+    eyebrow: 'Cargadores eléctricos en Bogotá',
+    titleStart: 'Instalación de cargadores para ',
     titleHighlight: 'vehículos eléctricos',
-    subtitle: 'Carga tu vehículo con facilidad, en casa o en tu lugar de trabajo.',
-    text: 'Implementamos soluciones de carga para vehículos eléctricos en parqueaderos, edificios, conjuntos residenciales y espacios comerciales.',
+    titleEnd: ' en Bogotá',
+    subtitle: 'Carga tu vehículo eléctrico con facilidad, en casa o en tu lugar de trabajo.',
+    text: 'Instalamos cargadores eléctricos de 7 kW, 11 kW y mayor potencia en casas, edificios, conjuntos residenciales, empresas y parqueaderos de todas las localidades de Bogotá, con certificación RETIE.',
     cta: 'Solicitar asesoría',
     card: {
       charging: 'Cargando…',
@@ -42,13 +44,13 @@ export default {
   },
   solutions: {
     eyebrow: 'Nuestras soluciones',
-    title: 'Soluciones de carga para cada espacio',
+    title: 'Cargadores eléctricos para cada espacio',
     imageLabel: 'Imagen',
     items: [
-      { title: 'Garajes residenciales', text: 'Cargadores compactos de pared; instalación limpia y discreta.', alt: 'Cargador de pared cargando un vehículo eléctrico' },
-      { title: 'Parqueaderos abiertos', text: 'Cargadores en pequeños pedestales o montados en columnas.', alt: 'Muro moderno de estilo brutalista con vehículos eléctricos cargando' },
-      { title: 'Parqueaderos corporativos', text: 'Soluciones para empleados, visitantes y vehículos de la empresa.', alt: 'Parqueadero subterráneo bien iluminado con vehículos eléctricos cargando' },
-      { title: 'Conjuntos residenciales', text: 'Soluciones de carga compartida para edificios de apartamentos y propiedades residenciales multifamiliares.', alt: 'Parqueadero subterráneo con vehículos eléctricos cargando' },
+      { title: 'Garajes residenciales', text: 'Cargadores de pared de 7 kW y 11 kW para tu casa; instalación limpia y discreta.', alt: 'Cargador eléctrico de pared cargando un vehículo eléctrico en un garaje residencial en Bogotá' },
+      { title: 'Parqueaderos abiertos', text: 'Cargadores en pequeños pedestales o montados en columnas.', alt: 'Electrolinera en parqueadero abierto con vehículos eléctricos cargando' },
+      { title: 'Parqueaderos corporativos', text: 'Electrolineras para empleados, visitantes y vehículos de la empresa.', alt: 'Parqueadero corporativo subterráneo con cargadores para vehículos eléctricos' },
+      { title: 'Conjuntos residenciales', text: 'Cargadores eléctricos compartidos o individuales para edificios de apartamentos y conjuntos residenciales.', alt: 'Cargadores eléctricos en el parqueadero subterráneo de un conjunto residencial' },
     ],
   },
   contact: {
@@ -75,11 +77,41 @@ export default {
   },
   benefits: {
     eyebrow: 'Por qué {brand}',
-    title: 'Beneficios de instalar estaciones de carga {brand}',
+    title: 'Beneficios de instalar tu cargador eléctrico con {brand}',
     items: [
-      { title: 'Comodidad y disponibilidad', text: 'Sin desplazamientos; carga cuando mejor se ajuste a tu horario.' },
-      { title: 'Rentabilidad', text: 'Tarifas de carga vehicular altamente competitivas.' },
-      { title: 'Seguridad y confiabilidad', text: 'Cargadores e instalaciones certificadas para uso interior y exterior.' },
+      { title: 'Comodidad y disponibilidad', text: 'Sin ir a una electrolinera: carga tu vehículo eléctrico en casa o en la oficina, cuando mejor se ajuste a tu horario.' },
+      { title: 'Ahorro', text: 'Cargar en casa cuesta mucho menos que tanquear con gasolina. Te asesoramos para elegir el cargador correcto sin pagar de más.' },
+      { title: 'Seguridad y confiabilidad', text: 'Ingenieros eléctricos y certificación RETIE. Cargadores e instalaciones aptos para uso interior y exterior.' },
+    ],
+  },
+  faq: {
+    eyebrow: 'Preguntas frecuentes',
+    title: 'Preguntas sobre cargadores eléctricos en Bogotá',
+    items: [
+      {
+        q: '¿Qué cargador eléctrico necesito para mi carro en casa?',
+        a: 'Para la mayoría de hogares recomendamos un cargador de pared de 7 kW (monofásico) u 11 kW (trifásico). Antes de instalar revisamos tu acometida y el vehículo para elegir la potencia adecuada. También instalamos cargadores de mayor potencia, incluidos los de carga rápida DC para empresas.',
+      },
+      {
+        q: '¿La instalación incluye certificación RETIE?',
+        a: 'Sí. Nuestros ingenieros eléctricos diseñan e instalan el punto de carga cumpliendo el RETIE y realizamos la certificación exigida por la normativa colombiana.',
+      },
+      {
+        q: '¿En qué zonas de Bogotá instalan cargadores?',
+        a: 'Cubrimos todas las localidades de Bogotá: Usaquén, Chapinero, Santa Fe, San Cristóbal, Usme, Tunjuelito, Bosa, Kennedy, Fontibón, Engativá, Suba, Barrios Unidos, Teusaquillo, Los Mártires, Antonio Nariño, Puente Aranda, La Candelaria, Rafael Uribe Uribe, Ciudad Bolívar y Sumapaz.',
+      },
+      {
+        q: '¿Puedo instalar un cargador en el parqueadero de mi conjunto residencial?',
+        a: 'Sí. Te ayudamos con el estudio técnico y la propuesta para la administración, ya sea un cargador individual conectado a tu medidor o una solución compartida para todo el conjunto.',
+      },
+      {
+        q: '¿Pueden montar una electrolinera en mi empresa o parqueadero?',
+        a: 'Sí. Diseñamos e instalamos electrolineras para flotas, empleados, visitantes y parqueaderos comerciales, con cargadores AC o DC según el uso, compatibles con conectores Tipo 1, Tipo 2 y GBT.',
+      },
+      {
+        q: '¿Cómo pido una cotización?',
+        a: 'Escríbenos por WhatsApp o por correo: respondemos 24/7. También puedes dejar tus datos en el formulario y un ingeniero te contactará para revisar tu proyecto.',
+      },
     ],
   },
   connectors: {
@@ -109,7 +141,7 @@ export default {
     ],
   },
   footer: {
-    tagline: 'Infraestructura de carga para vehículos eléctricos para empresas y espacios inteligentes.',
+    tagline: 'Instalación de cargadores para vehículos eléctricos y electrolineras en Bogotá. Atención 24/7 por WhatsApp y correo.',
     rights: 'Todos los derechos reservados.',
   },
 }

@@ -1,4 +1,4 @@
-import { SITE_URL, BRAND, OG_IMAGE, WHATSAPP_URL, CITIES, SOCIAL_LINKS } from './config.js'
+import { SITE_URL, BRAND, OG_IMAGE, OG_IMAGE_SIZE, WHATSAPP_URL, CITIES, SOCIAL_LINKS, CONTACT_EMAIL } from './config.js'
 import { DICTIONARIES } from './i18n/LanguageContext.jsx'
 import { LANGS, pathFor } from './routes.js'
 
@@ -19,37 +19,74 @@ export function getSeo(page, lang) {
   }
 }
 
+const ALL_WEEK = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+const KEYWORDS = {
+  es: ['instalación de cargadores eléctricos', 'cargador para vehículo eléctrico', 'electrolinera', 'certificación RETIE', 'cargador 7 kW', 'cargador 11 kW'],
+  en: ['EV charger installation', 'electric vehicle charger', 'EV charging station', 'RETIE certification', '7 kW charger', '11 kW charger'],
+}
+
 // Structured data so Google understands who you are (local business)
 export function jsonLd(lang) {
   const t = DICTIONARIES[lang]
+  const hours = { '@type': 'OpeningHoursSpecification', dayOfWeek: ALL_WEEK, opens: '00:00', closes: '23:59' }
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Electrician',
+    '@id': `${SITE_URL}/#business`,
     name: BRAND,
     url: abs(pathFor('home', lang)),
+    logo: abs('/favicon.svg'),
     image: abs(OG_IMAGE),
     description: t.meta.home.description,
+    slogan: t.hero.subtitle,
+    // Service-area business: city only, no street address
+    address: { '@type': 'PostalAddress', addressLocality: 'Bogotá', addressRegion: 'Bogotá D.C.', addressCountry: 'CO' },
     areaServed: CITIES.length
       ? CITIES.map((name) => ({ '@type': 'City', name }))
       : { '@type': 'Country', name: 'Colombia' },
+    openingHoursSpecification: hours,
     knowsLanguage: ['es', 'en'],
+    knowsAbout: KEYWORDS[lang],
     makesOffer: t.solutions.items.map((s) => ({
       '@type': 'Offer',
       itemOffered: { '@type': 'Service', name: s.title, description: s.text },
     })),
   }
-  if (phone) {
-    data.telephone = `+${phone}`
+  if (phone || CONTACT_EMAIL) {
     data.contactPoint = {
       '@type': 'ContactPoint',
-      telephone: `+${phone}`,
       contactType: 'customer service',
+      areaServed: 'CO',
       availableLanguage: ['Spanish', 'English'],
+      hoursAvailable: hours,
     }
+  }
+  if (phone) {
+    data.telephone = `+${phone}`
+    data.contactPoint.telephone = `+${phone}`
+  }
+  if (CONTACT_EMAIL) {
+    data.email = CONTACT_EMAIL
+    data.contactPoint.email = CONTACT_EMAIL
   }
   if (SOCIAL_LINKS.length) data.sameAs = SOCIAL_LINKS
   return data
 }
+
+// FAQ structured data (home page only); mirrors the visible FAQ section
+export function faqJsonLd(lang) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: DICTIONARIES[lang].faq.items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  }
+}
+
+const ldScript = (data) => `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
@@ -69,13 +106,17 @@ export function headTags(page, lang) {
     `<meta property="og:description" content="${esc(seo.description)}" />`,
     `<meta property="og:url" content="${seo.canonical}" />`,
     `<meta property="og:image" content="${image}" />`,
+    `<meta property="og:image:width" content="${OG_IMAGE_SIZE.width}" />`,
+    `<meta property="og:image:height" content="${OG_IMAGE_SIZE.height}" />`,
+    `<meta property="og:image:alt" content="${esc(seo.title)}" />`,
     `<meta property="og:locale" content="${OG_LOCALE[lang]}" />`,
     ...other.map((l) => `<meta property="og:locale:alternate" content="${OG_LOCALE[l]}" />`),
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${esc(seo.title)}" />`,
     `<meta name="twitter:description" content="${esc(seo.description)}" />`,
     `<meta name="twitter:image" content="${image}" />`,
-    `<script type="application/ld+json">${JSON.stringify(jsonLd(lang)).replace(/</g, '\\u003c')}</script>`,
+    ldScript(jsonLd(lang)),
+    ...(page === 'home' ? [ldScript(faqJsonLd(lang))] : []),
   ].join('\n    ')
 }
 

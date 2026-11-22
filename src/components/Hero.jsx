@@ -18,6 +18,7 @@ export default function Hero() {
           <h1>
             {h.titleStart}
             <span className="highlight">{h.titleHighlight}</span>
+            {h.titleEnd}
           </h1>
           <p className="hero__subtitle">{h.subtitle}</p>
           <p className="hero__text">{h.text}</p>

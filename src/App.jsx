@@ -6,6 +6,7 @@ import ContactSection from './components/ContactSection.jsx'
 import Benefits from './components/Benefits.jsx'
 import Connectors from './components/Connectors.jsx'
 import About from './components/About.jsx'
+import Faq from './components/Faq.jsx'
 import Footer from './components/Footer.jsx'
 import { LanguageProvider, DICTIONARIES } from './i18n/LanguageContext.jsx'
 import { saveLanguage } from './i18n/detect.js'
@@ -66,6 +67,7 @@ export default function App({ initialPath }) {
             <ContactSection id="contact" eyebrow={t.contact.homeEyebrow} title={t.contact.homeTitle} />
             <Benefits />
             <Connectors />
+            <Faq />
           </>
         ) : (
           <>

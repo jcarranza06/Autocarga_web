@@ -21,6 +21,7 @@ export default function Footer() {
           <Link page="home" section="solutions">{t.nav.solutions}</Link>
           <Link page="home" section="benefits">{t.nav.benefits}</Link>
           <Link page="home" section="connectors">{t.nav.connectors}</Link>
+          <Link page="home" section="faq">{t.nav.faq}</Link>
           <Link page="about">{t.nav.about}</Link>
         </nav>
         <WhatsAppButton />

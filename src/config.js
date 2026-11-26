@@ -40,6 +40,6 @@ export const IMAGES = {
 }
 
 // WhatsApp link, e.g. 'https://wa.me/573001234567'
-export const WHATSAPP_URL = 'https://wa.me/573204400593'
-
+export const WHATSAPP_URL = 'https://wa.me/573115113703'
+3703
 export const BRAND = 'Autocarga'
